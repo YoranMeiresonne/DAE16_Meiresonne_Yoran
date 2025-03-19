@@ -1,0 +1,147 @@
+glScalef(scale, scale, scale); 
+if (m_WalkingState == WalkingState::right)
+{
+	glScalef(-1.f, 1.f, 1.f);
+
+/*	glTranslatef(
+		-m_Spritesheet->GetWidth() ,
+		0.f,
+		0.0f
+	);*/
+}
+else if (m_WalkingState == WalkingState::left)
+{
+
+}
+
+m_Spritesheet->Draw(m_pCharacterController->GetBoundingBox(),srcRect);
+glPopMatrix(); 
+
+Change Things in GetBoundingBox to make work (Half Done, Wall don't work)
+Now look up how to connect nodes for inkscape (Done)
+Movement Player fixen, make it sor texture can change correctly.(Not done)
+ThirdMap(NotFully Done)
+Make Enemies Move(Not Done)
+Make Items Dissapear when hit(Not Done)
+Make PointSystem(Not Fully Done)
+
+
+Height Platform:20
+Width 1 thingt = 23 (660 / 28)
+Distance between platforms: 366, 289, 212, 138 (77 inbetween)
+
+
+Links:
+https://strategywiki.org/wiki/Bubble_Bobble/Enemies
+https://bubblebobble.fandom.com/wiki/List_of_items_in_Bubble_Bobble
+https://maps.speccy.cz/map.php?id=BubbleBobble1
+https://github.com/JK1337/Bubble-Bobble/blob/master/MovingEntity.cpp#L184
+
+
+
+Enemy Behaviour:
+Move Left and Right
+Jump,
+Attack
+
+-Bubble:
+
+Class Map Useless.
+
+Player press space -> Creates Bullet -> Bullet moves for … Time or until hit something
+Player Press space again -> creates another bullet -> bullet Move for … Time or hit something
+
+
+Creating bubble done, now make its animation and delete part. (done)
+
+
+Bubble Hit Enemy -> Bubble get deleted, Enemy goes through hit animation
+Needed: Knowing Which bubble hit, which enemy was hit
+How Do:
+
+Bubble Hit enemy -> enemy bubble animation (\/) -> Hit Bubble enemy -> defeated animation (motion needs to be done) -> after hitting a platform or ground dissapear and place a item there.
+So Defeated animation land when hittin platform (DefeatedHitGround) (Done)
+
+CharacterController Line 92- 101 Check and fix 
+Fix it in Zen_Chan Tingy 
+
+Enemy has 2 Jumps : Verticall when object above, horizontal when there is a gap
+If player above them = vertical jump. (Kinda done keep going up to keep up with player)
+Need something to detect a gap
+
+
+Enemy get stuck when hit boundry wall
+Enemy HitWall need fixing (when hit it their x velociti = 0?)
+
+
+
+
+
+TODO!
+
+StartScreen:
+Find Start Screen place it as level[0]
+Player makes circle in a bubble
+around 7 sec
+Screen Tekst
+
+
+
+Level:
+0 = StartScreen
+1 = 3 enemy
+2 = 
+
+
+Enemy Attack:
+
+
+Sounds:
+
+
+Player Death:
+Angry zen hit player, player death animation, Game over screen
+
+Next Level:
+all enemy dead and no items, 5.0f later go next level
+
+
+
+Fix Player Texture:
+Photoshop fix it
+
+Enemy Movements:
+Move around, checks left and right if player is on same level if not jumps
+If left or right | sees not stop horizantal movement and falls
+Problem: Always of ground/ Always falling
+Solution = detect if floor is close. | Failed
+Solution2 = if falling for .. time | Failed all enemy's stop
+
+
+Score:
+Middle Top of level say the level 
+Middle left shows score (Needs to be placed rigth rest done)
+Middle Right show Something
+When picking up show score tekst
+
+
+
+
+
+TODO:
+Try reach last level (Done yea)
+Jump down map appear above (Remove it from the map, make it so if player go under come up)
+SOUNDS!! (Done)
+Death Function (Done)
+Enemy Angry can dmg player (happens when x time) (Done)
+Have a Ending(Done)
+PickupItem Score above (when pickuped show the texture)
+
+Bubble Stop at angry to (Done)
+
+Level2 Thinner Platforms
+Level3 Wall and wider openingn
+level4 Hole in floor
+
+Look For the Weird Texute error
+

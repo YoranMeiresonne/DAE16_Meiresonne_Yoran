@@ -1,0 +1,7 @@
+Where Applied Rule of 5?
+Inheritance?
+PolyMorpfisme used?(Why?)
+Const, static, explicit , final, virtual, overrride ?
+Memory leaks?
+Pure Virtual? ( = 0, acts as a blueprint class, can't …)
+lvalue, rvalue ?

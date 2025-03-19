@@ -1,0 +1,91 @@
+void Player::Draw()
+{
+	//m_Spritesheet->Draw(m_pCharacterController->GetBoundingBox());
+	const float scale{ 2.f };
+	Rectf srcRect = GetCurrentFrameRect();
+	
+	glPushMatrix();
+	
+	glTranslatef(m_Velocity.x, 0.f, 0.f);
+	
+	if (m_WalkingState == WalkingState::left 
+			|| m_WalkingState == WalkingState::none 
+			|| m_WalkingState == WalkingState::up)
+	{
+		glScalef(scale, scale, scale);
+	}
+	if (m_WalkingState == WalkingState::right)
+	{
+		glScalef(-scale, scale, scale);
+		glTranslatef(-100.f, 0.f, 0.f);
+	}
+	
+	m_Spritesheet->Draw(m_pCharacterController->GetBoundingBox(),srcRect);
+	 
+	glPopMatrix(); 
+}
+void Player::Update(float elapsedSec, const std::vector<std::vector<Vector2f>>& world_Vertices_Table)
+{
+	/*m_accumulatedTime += elapsedSec;*/
+
+	bool IsWalking;
+	const float Gravity{ -100.f };
+	float
+		Horizontal_Movement{ 10.f };
+	const Uint8* pStates = SDL_GetKeyboardState(nullptr);
+
+	m_Velocity.y += Gravity * elapsedSec;
+
+	if (pStates[SDL_SCANCODE_LEFT] && !m_pCharacterController->HittingWall())
+	{
+		m_Velocity.x -= Horizontal_Movement * elapsedSec;
+		m_WalkingState = WalkingState::left;
+		IsWalking = true;
+	}
+	else if (pStates[SDL_SCANCODE_RIGHT] && !m_pCharacterController->HittingWall())
+	{
+
+		m_Velocity.x -= Horizontal_Movement * elapsedSec;
+		m_WalkingState = WalkingState::right;
+		IsWalking = true;
+	}
+	else
+	{
+		m_Velocity.x = 0.0f; // Stop movemenx²t when no keys are pressed
+	}
+
+	m_pCharacterController->Move(m_Velocity * elapsedSec, world_Vertices_Table);
+
+	if (m_pCharacterController->IsOnGround())
+	{
+		m_Velocity.y = 0.0f; //Player Hit Ground
+		if(pStates[SDL_SCANCODE_SPACE])
+		{
+			m_WalkingState = WalkingState::up;
+			m_Velocity.y = m_Velocity.y;
+			IsWalking = true;
+		}
+	}
+
+
+	else
+	{
+		m_WalkingState = WalkingState::none;
+		m_FrameNr = 1;
+		IsWalking = false;
+	}
+
+	//if (IsWalking)
+	//{
+	//	if (m_FrameNr < 4 && m_accumulatedTime >= m_Maxtime)
+	//	{
+	//		m_FrameNr++;
+	//		m_accumulatedTime = 0;
+	//	}
+	//	if (m_FrameNr >= 4)
+	//	{
+	//		m_FrameNr = 0;
+	//	}
+	//}
+
+}
