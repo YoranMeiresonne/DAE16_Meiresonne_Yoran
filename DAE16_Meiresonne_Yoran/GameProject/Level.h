@@ -51,7 +51,7 @@ private:
 	Rectf m_PointBounds{};
 
 	std::vector<Items*> m_Item;
-	std::vector<Enemy*> Enemy;
+	std::vector<Enemy*> m_Enemy;
 	std::vector<Zen_Chan*> m_ZenEnemy;
 
 	Player* m_Player;

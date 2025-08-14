@@ -4,6 +4,7 @@
 #include "utils.h"
 #include "Items.h"
 #include "Player.h"
+#include "Zen_Chan.h"
 
 Level::Level(const int levelNr, std::vector<std::vector<Vector2f>> EnemyPos, std::vector<std::vector<std::vector<std::vector<Vector2f>>>>  Maps)
 	:m_LevelNr{levelNr}
@@ -18,7 +19,10 @@ Level::Level(const int levelNr, std::vector<std::vector<Vector2f>> EnemyPos, std
 	{
 		m_ZenEnemy.push_back(new Zen_Chan(EnemyPos[i][0]));
 	}
-
+	for (size_t i = 0; i < EnemyPos.size(); i++)
+	{
+		m_Enemy.push_back(new Zen_Chan(EnemyPos[i][0]));
+	}
 
 	m_Tekst = new Texture{ "NOW IT IS THE BEGINNING OF A FANTASTIC STORY! LET US MAKE A JOURNEY TO THE CAVE OF MONSTERS! GOOD LUCK!",
 							"VCR_OSD_MONO_1.001.ttf",

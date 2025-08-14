@@ -13,7 +13,7 @@ public:
 	~Enemy();
 
 	virtual void Draw();
-	void Update(float elapsedSec, const std::vector<std::vector<Vector2f>>& world_Vertices_Table, Player*& player);
+	virtual void Update(float elapsedSec, const std::vector<std::vector<Vector2f>>& world_Vertices_Table, Player*& player);
 	void SetGameTime(float Time);
 
 	float GetGameTime();

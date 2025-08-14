@@ -22,8 +22,6 @@ public:
 
 	const Rectf& GetBoundingBox() const;
 
-	
-
 private:
 	bool m_CollisionOn{ true };
 	bool m_RealFalling{ false };

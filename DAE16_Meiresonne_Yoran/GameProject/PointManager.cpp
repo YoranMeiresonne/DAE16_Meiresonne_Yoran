@@ -6,6 +6,7 @@
 PointManager::PointManager(int points) 
 	:m_Points{ points } 
 	,m_Position{Vector2f(630.f / 4, 443.f)}
+	,m_Score{}
 {
 	m_Score = new Texture{ std::to_string(m_Points),"VCR_OSD_MONO_1.001.ttf",30,Color4f{1.f,1.f,1.f,1.f} };
 }

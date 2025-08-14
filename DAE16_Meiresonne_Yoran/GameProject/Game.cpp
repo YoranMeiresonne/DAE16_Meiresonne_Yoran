@@ -63,6 +63,10 @@ void Game::Initialize( )
 
 void Game::Cleanup( )
 {
+	
+
+
+
 	for (int i = 0; i < m_TheMap.size(); i++)
 	{
 		m_TheMap[i].clear();
@@ -86,6 +90,7 @@ void Game::Cleanup( )
 
 	m_Mappen[0].clear();
 	m_Level.clear();
+	m_worldVerticesTable.clear(); 
 }
 
 void Game::Update( float elapsedSec )
