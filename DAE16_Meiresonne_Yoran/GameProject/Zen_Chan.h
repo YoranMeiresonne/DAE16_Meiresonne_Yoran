@@ -26,7 +26,7 @@ public:
 	void Defeated();
 	void SetBehaviorState(const BehaviorState& Behavior);
 
-	bool IsDead();
+	bool virtual IsDead() override;
 	bool IsBubble();
 
 	Vector2f DeadPosition();

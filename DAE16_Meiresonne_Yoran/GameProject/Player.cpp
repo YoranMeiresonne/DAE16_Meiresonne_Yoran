@@ -64,7 +64,7 @@ void Player::Draw()
 		if (m_pBubble[i]->IsShot())
 		{
 			m_pBubble[i]->Draw();
-			utils::DrawRect(m_pBubble[i]->GetBoundingRect());
+			/*utils::DrawRect(m_pBubble[i]->GetBoundingRect());*/
 		}
 	}
 
@@ -189,9 +189,6 @@ void Player::Update(float elapsedSec, const std::vector<std::vector<Vector2f>>& 
 				
 			}
 		}
-
-
-		
 	
 	
 		if (m_Attacking && m_accumulatedFrameTime >= 0.5f)

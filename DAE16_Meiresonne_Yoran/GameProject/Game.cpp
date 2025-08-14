@@ -34,7 +34,7 @@ Game::~Game( )
 void Game::Initialize( )
 {
 	m_Camera = new Camera(GetViewPort().width, GetViewPort().height);
-
+	
 	InitializeMap();
 
 	std::string Tekst("NOW IT IS THE BEGINNING OF ");
@@ -79,7 +79,7 @@ void Game::Cleanup( )
 	}
 
 	m_PointManager->~PointManager();
-
+	delete m_PointManager;
 
 	m_ThePlayer->~Player();
 	delete m_ThePlayer;
@@ -329,7 +329,7 @@ void Game::ClearBackground( ) const
 
 void Game::Collisionchecks()
 {
-	//Player/Item Collision (Needs work)
+	//Player/Item Collision (Needs work.
 
 	for (int idx = 0; idx < m_Level[m_LevelNr]->GetNumeItems(); idx++)
 	{

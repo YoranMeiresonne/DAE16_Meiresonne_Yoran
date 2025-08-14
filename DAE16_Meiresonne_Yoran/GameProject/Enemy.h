@@ -18,7 +18,7 @@ public:
 
 	float GetGameTime();
 	
-	bool IsDead();
+	bool virtual IsDead();
 	bool IsPlatformAbove();
 
 	virtual Rectf GetBoundingBox();
