@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 
-  <h2 align="center">NAME OF CHOSEN GAME</h2>
+  <h2 align="center">Bubble Bobble</h2>
 
   <p align="center">
     Short description of the game.
@@ -61,16 +61,19 @@ TODO: describe why you chose this game
 This section gives a clear and detailed overview of which parts of the original game I planned to make.
 
 ### The minimum I will most certainly develop:
-* .. 
-* .. 
+* All 5 Levels
+* Enemies (Move, Jump, Attack)
+* Player(Move,Jump,Attack)
+* Sound
 
 ### What I will probably make as well:
-* .. 
-* .. 
+* Score
+* Death
+* Victory
 
 ### What I plan to create if I have enough time left:
-* .. 
-* .. 
+* Maybe More Levels
+* More Details
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,8 +103,10 @@ Use this space to show useful examples of how a game can be played.
 Additional screenshots and demos work well in this space. 
 
 ### Controls
-* keys, .. 
-* .. 
+* Arrow key for left and right
+* Up Arrow key to jump
+* Space bar to shoot
+* Player stuck press R
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,8 +118,15 @@ Additional screenshots and demos work well in this space.
 ### Object composition 
 If you applied object composition (optional); explain where and how.
 
+With Player, I made it so that the player decide when the bubble (that is shot) is made and destroyed
+
 ### Inheritance 
 Explain where you applied inheritance (mandatory).
+
+For Enemy
+
+I hava a Enemy class and Zen_Chan class
+Zen_chan is a type a enemy
 
 ### ..
 
@@ -125,16 +137,16 @@ Explain where you applied inheritance (mandatory).
 ## Checklist
 
 - [x] Accept / set up github project
-- [ ] week 01 topics applied
-    - [ ] const keyword applied proactively (variables, functions,..)
+- [X] week 01 topics applied
+    - [X] const keyword applied proactively (variables, functions,..)
     - [ ] static keyword applied proactively (class variables, static functions,..)
-    - [ ] object composition (optional)
+    - [X] object composition (optional)
 - [ ] week 02 topics applied
-- [ ] week 03 topics applied
-- [ ] week 04 topics applied
-- [ ] week 05 topics applied
+- [X] week 03 topics applied
+- [X] week 04 topics applied
+- [X] week 05 topics applied
 - [ ] week 06 topics applied
-- [ ] week 07 topics applied
+- [X] week 07 topics applied
 - [ ] week 08 topics applied
 - [ ] week 09 topics applied (optional)
 - [ ] week 10 topics applied (optional)
@@ -144,7 +156,7 @@ Explain where you applied inheritance (mandatory).
 <!-- CONTACT -->
 ## Contact
 
-Your Name - email@student.howest.be
+Meiresonne Yoran - yoran.meiresonne@student.howest.be
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
